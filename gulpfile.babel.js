@@ -109,7 +109,7 @@
     // compile SCSS
     function sass() {
 
-        return gulp.src( 'src/assets/scss/cvmbs.facc.ui.scss' )
+        return gulp.src( 'src/assets/scss/cvmbs.equine.ui.scss' )
 
             .pipe( $.sourcemaps.init() )
 
@@ -296,7 +296,7 @@
 
             .pipe( webpackStream( webpackConfig, webpack2 ) )
 
-            .pipe( $.concat( 'cvmbs.facc.app.min.js' ) )
+            .pipe( $.concat( 'cvmbs.equine.app.min.js' ) )
 
             .pipe( $.uglify()
 

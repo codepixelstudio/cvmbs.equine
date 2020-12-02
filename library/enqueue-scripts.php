@@ -39,7 +39,7 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path( 'cvmbs.ui.css' ), array(), '1.0.0', 'all' );
 
         // Enqueue the main Stylesheet.
-		wp_enqueue_style( 'local-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path( 'cvmbs.facc.ui.css' ), array(), '1.0.0', 'all' );
+		wp_enqueue_style( 'local-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path( 'cvmbs.equine.ui.css' ), array(), '1.0.0', 'all' );
 
 		// Deregister the jquery version bundled with WordPress.
 		// wp_deregister_script( 'jquery' );
@@ -59,7 +59,7 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		wp_enqueue_script( 'cvmbs', get_template_directory_uri() . '/dist/assets/js/' . foundationpress_asset_path( 'cvmbs.app.js' ), array( 'jquery' ), false, true );
 
         // Enqueue Foundation scripts
-		wp_enqueue_script( 'local', get_stylesheet_directory_uri() . '/dist/assets/js/' . foundationpress_asset_path( 'cvmbs.facc.app.js' ), array( 'jquery' ), '1.0.0', true );
+		wp_enqueue_script( 'local', get_stylesheet_directory_uri() . '/dist/assets/js/' . foundationpress_asset_path( 'cvmbs.equine.app.js' ), array( 'jquery' ), '1.0.0', true );
 	}
 
 	add_action( 'wp_enqueue_scripts', 'foundationpress_scripts' );
