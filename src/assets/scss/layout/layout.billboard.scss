@@ -1,0 +1,812 @@
+// stylesheet :: homepage billboard layout
+
+    // settings
+    $billboard : 1rem;
+    $slideshow_default : calc( 50vh + 5rem );
+    $slideshow_small   : calc( 60vh + 4rem );
+    $slideshow_large   : calc( 65vh + 5rem );
+
+    // styles
+    #custom_billboard {
+
+        position: relative;
+
+        @include flex-h-c-v-c( false );
+
+        // height: calc( 50vh + 5rem );
+        height: $slideshow_default;
+
+        @include shadowbox( 1rem, 4rem, black, 0.565 );
+
+        // mobile
+        @include breakpoint ( small only ) {
+
+            // height: calc( 60vh + 4rem );
+            height: $slideshow_small;
+
+        }
+
+        // mobile
+        @include breakpoint ( large up ) {
+
+            // height: calc( 65vh + 5rem );
+            height: $slideshow_large;
+
+        }
+
+        // slideshow
+        &.slideshow {
+
+            // slides
+            .slideshow_slides {
+
+                @include flex-v-c-h-c( false );
+
+                width: 100vw;
+                height: $slideshow_default;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    height: $slideshow_small;
+
+                }
+
+                // mobile
+                @include breakpoint ( large up ) {
+
+                    height: $slideshow_large;
+
+                }
+
+            }
+
+            // controls
+            #slideshow_controls {
+
+                position: absolute;
+
+                right: 5rem;
+                bottom: 5rem;
+
+                z-index: 100;
+
+                width: 8rem;
+                height: 4rem;
+
+                @include shadowbox( 1rem, 3.5rem, black, 0.425 );
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    @include hide;
+
+                }
+
+            }
+
+            // controls
+            .slideshow_control {
+
+                position: absolute;
+
+                bottom: 5rem;
+
+                z-index: 200;
+
+                width: 4rem;
+                height: 4rem;
+
+                overflow: hidden;
+
+                text-indent: -999rem;
+
+                @include fill( $dark, 0.565 );
+
+                transition: $all220;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    display: none !important;
+
+                }
+
+                // common
+                &.arrow_next,
+                &.arrow_prev {
+
+                    // hover state
+                    &:hover {
+
+                        @include fill( $campaign, 0.000 );
+
+                    }
+
+                }
+
+                // next arrow
+                &.arrow_next {
+
+                    right: 5rem;
+
+                    @include fill( $g140, 0.265 );
+
+                }
+
+                // previous arrow
+                &.arrow_prev {
+
+                    right: 9rem;
+
+                    @include fill( $g135, 0.265 );
+
+                }
+
+                // svg
+                svg {
+
+                    position: absolute;
+
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+
+                }
+
+            }
+
+            // dots
+            .slideshow_dots {
+
+                position: absolute;
+
+                bottom: 2rem;
+
+                z-index: 200;
+
+                @include flex-h-c-v-c( false );
+
+                width: auto;
+                height: 0.75rem;
+                margin: 0 0 0 0;
+
+                list-style: none;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    bottom: 1rem;
+
+                }
+
+                // dot
+                li {
+
+                    width: 0.75rem;
+                    height: 0.75rem;
+                    margin: 0 0.25rem 0 0.25rem;
+
+                    overflow: hidden;
+
+                    text-indent: -999rem;
+
+                    @include fill( white, 0.825 );
+
+                    transition: $all220;
+
+                    // active
+                    &.slick-active {
+
+                        @include fill( $campaign, 0.000 );
+
+                    }
+
+                }
+
+            }
+
+            // slick
+            .slick-list {
+
+                position: absolute;
+
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                height: 100%;
+
+                // track
+                .slick-track {
+
+                    width: 100vw;
+                    height: 100%;
+
+                }
+
+            }
+
+            // slide
+            .slideshow_slide {
+
+                position: relative;
+
+                width: 100vw;
+                height: $slideshow_default;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    height: $slideshow_small;
+
+                }
+
+                // mobile
+                @include breakpoint ( large up ) {
+
+                    height: $slideshow_large;
+
+                }
+
+            }
+
+            // common
+            .layers {
+
+                position: absolute;
+
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+
+                // uiFX
+                &.uiFX {
+
+                    z-index: 10;
+
+                    // common
+                    .layer {
+
+                        position: absolute;
+
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        // image
+                        &.image {
+
+                            z-index: 10;
+
+                            background: {
+
+                                image: url(../img/billboard.03.jpg);
+                                repeat: no-repeat;
+                                size: cover;
+                                position: center center;
+
+                            }
+
+                        }
+
+                        // overlay
+                        &.overlay {
+
+                            z-index: 20;
+
+                            // common
+                            &:before,
+                            &:after {
+
+                                content: '';
+
+                                position: absolute;
+
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                left: 0;
+
+                            }
+
+                            // before
+                            &:before {
+
+                                z-index: 10;
+
+                                // @include fill( $dark, 0.565 );
+
+                                @include gradient(
+
+                                    0deg,
+                                    $dark, 0.385, 0%,
+                                    transparent, 1.000, 100%
+
+                                );
+
+                            }
+
+                            // after
+                            &:after {
+
+                                z-index: 20;
+
+                                @include gradient(
+
+                                    0deg,
+                                    $g140, 0.685, 0%,
+                                    transparent, 1.000, 100%
+
+                                );
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                // content
+                &.content {
+
+                    z-index: 20;
+
+                    @include flex-v-b-h-s( false );
+
+                    padding: 5rem 5rem 5rem 5rem;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        @include flex-v-b-h-c( false );
+
+                        padding: 4rem 3rem 3rem 3rem;
+
+                        text-align: center;
+
+                    }
+
+                    // common
+                    .content_layer {
+
+                        @include flex-h-s-v-c( false );
+
+                        // headline
+                        &.headline {
+
+                            @include font( $klavislim, 3.5rem, 400 );
+
+                            @include text( $up );
+
+                            @include typo( 2.875rem, 0.045em );
+
+                            @include color( $campaign, 0.000 );
+
+                            // mobile
+                            @include breakpoint ( medium only ) {
+
+                                font-size: 3rem;
+
+                            }
+
+                            // mobile
+                            @include breakpoint ( small only ) {
+
+                                font-size: 2.5rem;
+
+                            }
+
+                        }
+
+                        // subheadline
+                        &.subheadline {
+
+                            margin: 1rem 0 0 0;
+
+                        }
+
+                        // button
+                        &.action_button {
+
+                            height: 4rem;
+                            margin: 1.5rem 0 0 0;
+                            padding: 0.125rem 1.5rem 0 1.5rem;
+
+                            @include font( $klavislim, 1.125rem, 400 );
+
+                            @include text( $up );
+
+                            @include typo( 0.875rem, 0.035em );
+
+                            @include color( white, 0.000 );
+
+                            @include fill( $g140, 0.165 );
+
+                            @include shadowbox( 1rem, 3rem, black, 0.565 );
+
+                            transition: $all220;
+
+                            // hover state
+                            &:hover {
+
+                                @include fill( $campaign, 0.135 );
+
+                                cursor: pointer;
+
+                            }
+
+                            // mobile
+                            @include breakpoint ( medium only ) {
+
+                                // font-size: 3rem;
+
+                            }
+
+                            // mobile
+                            @include breakpoint ( small only ) {
+
+                                height: 3rem;
+
+                                font-size: 1rem;
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        // video player
+        &.video_player {
+
+            height: 100vh;
+
+            // common
+            .layers {
+
+                position: absolute;
+
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+
+                // uiFX
+                &.uiFX {
+
+                    z-index: 10;
+
+                    // common
+                    .layer {
+
+                        position: absolute;
+
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        // image
+                        &.image {
+
+                            z-index: 10;
+
+                            background: {
+
+                                image: url(../img/billboard.00.jpg);
+                                repeat: no-repeat;
+                                size: cover;
+                                position: center center;
+                                attachment: fixed;
+
+                            }
+
+                        }
+
+                        // overlay
+                        &.overlay {
+
+                            z-index: 20;
+
+                            // common
+                            &:before,
+                            &:after {
+
+                                content: '';
+
+                                position: absolute;
+
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                left: 0;
+
+                            }
+
+                            // before
+                            &:before {
+
+                                z-index: 10;
+
+                                @include gradient(
+
+                                    0deg,
+                                    $midnite, 0.385, 0%,
+                                    transparent, 1.000, 50%
+
+                                );
+
+                            }
+
+                            // after
+                            &:after {
+
+                                z-index: 20;
+
+                                @include gradient(
+
+                                    0deg,
+                                    $dark, 0.385, 0%,
+                                    transparent, 1.000, 50%
+
+                                );
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                // content
+                &.content {
+
+                    z-index: 20;
+
+                    @include flex-v-c-h-c( false );
+
+                    padding: 0 0 0 0;
+
+                    // container
+                    .video_container {
+
+                        width: 70vw;
+                        margin: 0 0 3rem 0;
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+
+                            width: 90vw;
+
+                        }
+
+                        // mobile
+                        @include breakpoint ( medium only ) {
+
+                            width: 80vw;
+
+                        }
+
+                    }
+
+                    // video
+                    .program-video {
+
+                        position: relative;
+
+                        padding: 56.25% 0 0 0;
+
+                        overflow: hidden;
+
+                        @include fill( white, 0.865 );
+
+                        @include shadowbox( 1.5rem, 4.5rem, black, 0.425 );
+
+                        // hover state
+                        &:hover {
+
+                            // before
+                            &:before {
+
+                                filter: blur( 16px );
+
+                                transition: all 160ms $ioexpo 0ms;
+
+                            }
+
+                            // after
+                            &:after {
+
+                                @include fill( $dark-nite, 0.325 );
+
+                                transition: $all220;
+
+                            }
+
+                        }
+
+                        // iframe
+                        iframe {
+
+                            position: absolute;
+
+                            z-index: 20;
+
+                            top: 0;
+                            left: 0;
+
+                            width: 100%;
+                            height: 100%;
+
+                        }
+
+                        // before
+                        &:before {
+
+                            content: '';
+
+                            position: absolute;
+
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+
+                            z-index: 10;
+
+                            background: {
+
+                                image: url(../img/video.00.jpg);
+                                repeat: no-repeat;
+                                size: cover;
+                                position: center center;
+
+                            }
+
+                            filter: blur( 0 );
+
+                            transition: $all220;
+
+                        }
+
+                        // after
+                        &:after {
+
+                            content: '';
+
+                            position: absolute;
+
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+
+                            z-index: 10;
+
+                            @include fill( $dark-nite, 0.565 );
+
+                            transition: $all220;
+
+                        }
+
+                    }
+
+                    // container
+                    .text_container {
+
+                        @include hide;
+
+                        // common
+                        .content_layer {
+
+                            @include flex-h-c-v-c( false );
+
+                            // headline
+                            &.headline {
+
+                                @include font( $klavislim, 3.5rem, 400 );
+
+                                @include text( $up );
+
+                                @include typo( 2.875rem, 0.045em );
+
+                                @include color( $campaign, 0.000 );
+
+                                // mobile
+                                @include breakpoint ( medium only ) {
+
+                                    font-size: 3rem;
+
+                                }
+
+                                // mobile
+                                @include breakpoint ( small only ) {
+
+                                    font-size: 2.5rem;
+
+                                }
+
+                            }
+
+                            // subheadline
+                            &.subheadline {
+
+                                margin: 1rem 0 0 0;
+
+                            }
+
+                            // button
+                            &.action_button {
+
+                                height: 4rem;
+                                margin: 1.5rem 0 0 0;
+                                padding: 0.125rem 1.5rem 0 1.5rem;
+
+                                @include font( $klavislim, 1.125rem, 400 );
+
+                                @include text( $up );
+
+                                @include typo( 0.875rem, 0.035em );
+
+                                // @include color( $campaign, 0.000 );
+                                // @include color( $g140, 0.000 );
+
+                                // @include fill( $campaign, 0.000 );
+                                @include fill( $g140, 0.165 );
+
+                                @include shadowbox( 1rem, 3rem, black, 0.565 );
+
+                                transition: $all220;
+
+                                // hover state
+                                &:hover {
+
+                                    cursor: pointer;
+
+                                }
+
+                                // mobile
+                                @include breakpoint ( medium only ) {
+
+                                    // font-size: 3rem;
+
+                                }
+
+                                // mobile
+                                @include breakpoint ( small only ) {
+
+                                    // font-size: 2.5rem;
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
