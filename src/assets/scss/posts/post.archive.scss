@@ -1,0 +1,49 @@
+// stylesheet :: archive view styles
+
+    // settings
+    $default : 1rem;
+
+    // styles
+    .archive {
+
+        font-size: 1rem;
+
+        @include color( $app05, 0.245 );
+
+        @include fill( $sec_temp_off_white, 0.000 );
+
+        // site layout
+        #site-layout {
+
+            @include fill( white, 1.000 );
+
+            background: {
+
+                image: none;
+
+            }
+
+        }
+
+        // header
+        .post-header {
+
+            padding: 6.25rem 8vw 0 8vw;
+
+            // h1
+            h1 {
+
+                margin: 0 auto 0 auto;
+
+            }
+
+        }
+
+        // content
+        .post-content {
+
+            padding: 0 8vw 4rem 8vw;
+
+        }
+
+    }

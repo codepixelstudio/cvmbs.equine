@@ -5,7 +5,7 @@
     <!-- subheading -->
     <span class="subheading">
 
-        flint animal cancer center newsletter
+        equine reproduction laboratory newsletter
 
     </span>
     <!-- END subheading -->
@@ -58,7 +58,7 @@
         <div id="terms_fields" class="form_fields">
 
             <input id="terms" type="checkbox" name="terms" value="">
-            <label for="terms">Yes, please add me to the CSU Animal Cancer Center mailing list.</label>
+            <label for="terms">Yes, please add me to the CSU Equine Reproduction Laboratory mailing list.</label>
 
         </div>
         <!-- END container -->

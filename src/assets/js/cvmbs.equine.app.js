@@ -26,6 +26,16 @@
     // homepage slideshow
     const slideshow = $( '#custom_billboard.slideshow .slideshow_slides' );
 
+    // base object
+    export var site = {};
+
+    // functions
+    site.fx = {
+
+        loadme : $('.load_me')
+
+    };
+
 // ========================================================================================================
 // END :: config.objects
 // ========================================================================================================
@@ -38,6 +48,9 @@
 
     // you know what it is bruh
     $(document).ready( function() {
+
+        // loaded
+        site.fx.loadme.toggleClass( 'load_me loaded' );
 
         // slick that
         slideshow.slick({

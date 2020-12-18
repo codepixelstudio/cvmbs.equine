@@ -1,39 +1,16 @@
-<nav id="menu_header">
+<nav id="menu_header" class="load_me">
 
-    <a href="#" class="menu_link">
+    <?php
 
-        about us
+        // location class
+        $menu_class = 'menu header';
 
-    </a>
+        // data type
+        $menu_type = 'data-dropdown-menu data-click-open';
 
-    <a href="#" class="menu_link">
+        // function call
+        equine_site_menu( $menu_class, $menu_type );
 
-        oncology care
-
-    </a>
-
-    <a href="#" class="menu_link">
-
-        one cure
-
-    </a>
-
-    <a href="#" class="menu_link">
-
-        clinical trials
-
-    </a>
-
-    <a href="#" class="menu_link">
-
-        education + research
-
-    </a>
-
-    <a href="#" class="menu_link donate">
-
-        donate
-
-    </a>
+    ?>
 
 </nav>

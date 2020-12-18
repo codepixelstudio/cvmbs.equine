@@ -1,0 +1,13 @@
+// stylesheet :: post(s) views stylesheet compiler
+
+    // globals
+    @import 'post.globals';
+
+    // archive
+    @import 'post.archive';
+
+    // single
+    @import 'post.single';
+
+    // default
+    @import 'post.default';

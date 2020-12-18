@@ -6,26 +6,13 @@
     // options pages
     require_once( 'library/options.php' );
 
-    // save any ACF data to child theme
-    add_filter( 'acf/settings/save_json', function() {
+    // menus pages
+    require_once( 'library/menus.php' );
 
-        return get_stylesheet_directory() . '/acf-json';
+    // page template settings
+    require_once( 'library/pages.php' );
 
-    });
-
-    // load ACF from parent theme
-    add_filter( 'acf/settings/load_json', function( $paths ) {
-
-        $paths = array( get_template_directory() . '/acf-json' );
-
-    	if ( is_child_theme() ) {
-
-    		$paths[] = get_stylesheet_directory() . '/acf-json';
-
-        }
-
-    	return $paths;
-
-    });
+    // acf settings
+    require_once( 'library/acf.php' );
 
 ?>

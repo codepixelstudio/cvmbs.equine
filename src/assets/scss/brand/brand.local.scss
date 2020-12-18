@@ -9,11 +9,11 @@
         @include flex-h-s-v-c( false );
 
         height: 5rem;
-        padding: 0.0625rem 0 0 0;
+        padding: 0.0625rem 0 0 0.75rem;
 
-        @include font( $klavika, 1rem, 600 );
+        @include font( $proxima, 1rem, 500 );
 
-        @include typo( 1.1875rem, 0.015em );
+        @include typo( 1.1875rem, 0.035em );
 
         @include text( $up );
 
@@ -24,7 +24,7 @@
 
             height: 4rem;
 
-            @include font( $klavika, 0.875rem, 600 );
+            @include font( $proxima, 0.75rem, 500 );
 
             @include typo( 1rem, 0.015em );
 
