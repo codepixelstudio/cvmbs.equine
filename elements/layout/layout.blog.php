@@ -65,6 +65,9 @@
 
     }
 
+    // custom blog text
+    $blog_options = get_field( 'blog_options' );
+
 ?>
 
 <!-- blog -->
@@ -73,7 +76,19 @@
     <!-- heading -->
     <h2>
 
-        news and updates
+        <?php
+
+            if ( $blog_options[ 'title' ] ) {
+
+                echo $blog_options[ 'title' ];
+
+            } else {
+
+                echo 'news and updates';
+
+            }
+
+        ?>
 
     </h2>
     <!-- END heading -->
@@ -173,7 +188,7 @@
             <!-- description -->
             <p class="metadata description">
 
-                This is optional descriptive text about the blog and its purpose. Insert your rad copy here.
+                <?php echo $blog_options[ 'description' ]; ?>
 
             </p>
             <!-- END description -->
