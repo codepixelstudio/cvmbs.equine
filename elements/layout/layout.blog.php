@@ -188,7 +188,19 @@
             <!-- description -->
             <p class="metadata description">
 
-                <?php echo $blog_options[ 'description' ]; ?>
+                <?php
+
+                    if ( $blog_options[ 'description' ] ) {
+
+                        echo $blog_options[ 'description' ];
+
+                    } else {
+
+                        echo 'set custom blog description text via Pages->Homepage->ERL Homepage Options';
+
+                    }
+
+                ?>
 
             </p>
             <!-- END description -->
